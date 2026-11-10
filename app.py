@@ -3,8 +3,32 @@ import argparse
 import dumper_loader_file #created module with function used dump and load the json file
 import functions #created module to store the functions
 import logging
+import time
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
 
+class MyHandler(FileSystemEventHandler): 
 
+    def on_created(self, event):
+        if event.is_directory:
+            return
+        else:
+            print("--------------------------------------------------")
+            print(f"File with path {event.src_path} has been Added\n")
+        
+    def on_deleted(self, event):
+        if event.is_directory:
+            return
+        else:
+            print("--------------------------------------------------")
+            print(f"File with path {event.src_path} has been Deleted\n")
+  
+    def on_modified(self, event):
+        if event.is_directory:
+            return
+        else:
+            print("--------------------------------------------------\n")
+            print(f"File with path {event.src_path} has been Modified")
 
 if __name__ == "__main__":
      #blank dict to store the file path and other details of the file
@@ -18,6 +42,7 @@ if __name__ == "__main__":
     parser.add_argument("--stat", type = str, help="This command is used to provide stats of each files added,deleted and modified")
     parser.add_argument("--update", type = str, help="This command is used to provide stats of each files added,deleted and modified")
     parser.add_argument("--verify_log", type=str, help="This command is used to verify the log entries to check if any log has been altered or not")
+    parser.add_argument("--monitor" , type=str, help="This command is used to automate the process of monitoring files")
     arg = parser.parse_args()
 
     log_file_path = ""
@@ -39,16 +64,19 @@ if __name__ == "__main__":
                             filehandler.write(f"{details}\n")
                     dumper_loader_file.json_dump_op(baseline_file_details,path) #used to dump the json file
                     print(f"Your Given path : {path} is now under monitoring......")
+                    print("Note: You can run '--monitor <path_name>' for enabling the automated monitoring")
+
                     logging.basicConfig(
-                                level = logging.INFO,
-                                force = True,
-                                filemode="a",
-                                filename = f"{path.parent}/log_files/{path.stem}.log",
-                                format="{  \n Message: %(message)s \n Date & time: %(asctime)s \n Logging_level: %(levelname)s \n}",
-                            )
+                        level = logging.INFO,
+                        force = True,
+                        filemode="a",
+                        filename = f"{path.parent}/log_files/{path.stem}.log",
+                        format="{  \n Message: %(message)s \n Date & time: %(asctime)s \n Logging_level: %(levelname)s \n}",
+                    )
                     logging.info(f"Path: {path} was updated for monitoring as on with below details:")
                     functions.log_hex(f"{path.parent}/log_files/{path.stem}.log",path)
-                    
+                            
+
                 else:
                         print("Given path or its parent path already exists and its files are being monitored")
                         print("Kindly run '--check or --stat' on the path or its parent pat to view details of monitoring files")
@@ -58,6 +86,25 @@ if __name__ == "__main__":
     
             print("Given File/Dir path does not exists, kindly check the path provided")
             print("Note: You can also run '--help' for assitance with commands")
+
+
+    elif arg.monitor:
+        path = Path(arg.monitor)
+        if path.exists():
+            event_handler = MyHandler()
+            observer = Observer()
+            observer.schedule(event_handler, path, recursive=True)
+            print(f"Automated file-montoring has been initiated on {path}")
+            observer.start()
+
+            try:
+                while True:
+                    time.sleep(1)
+            except KeyboardInterrupt:
+                print("--------------------------------------------------------------------------------------------------------------------")
+                print("Please Note: File under monitoring, however realtime automated monitoring has been stopped due to Keyboard Interrupt")
+
+
 
     #Below code help to provide summary of file which are being monitored for additions,deletions,content modifcations or permission changes in a file
     elif arg.check:
