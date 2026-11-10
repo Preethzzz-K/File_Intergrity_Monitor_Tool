@@ -1,9 +1,15 @@
-{  Message: Path: /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified was initiated for monitoring as on with below details: 
- Date & time: 2026-11-02 01:08:36,192 
- Logging_level: INFO }
-
-    
-{  Message: Path: /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified was initiated for monitoring as on with below details: 
- Date & time: 2026-11-02 01:10:22,145 
- Logging_level: WARNING }
-
+{  
+ Message: Path: /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified was updated for monitoring as on with below details: 
+ Date & time: 2026-11-08 23:27:08,975 
+ Logging_level: INFO 
+}
+{  
+ Message: Path: /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified has /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Agents/Agent0.txt file path and has been modified. Below are the details: 
+ Date & time: 2026-11-09 07:30:19,176 
+ Logging_level: WARNING 
+}
+{  
+ Message: Path: /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified was initiated for monitoring as on with below details: 
+ Date & time: 2026-11-09 07:30:56,923 
+ Logging_level: WARNING 
+}

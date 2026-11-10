@@ -5,6 +5,7 @@ import functions #created module to store the functions
 import logging
 
 
+
 if __name__ == "__main__":
      #blank dict to store the file path and other details of the file
     baseline_file_details = {}
@@ -16,6 +17,7 @@ if __name__ == "__main__":
     parser.add_argument("--check", type=str, help="This command is used to monitor the files and provide results on changes in dir or file")
     parser.add_argument("--stat", type = str, help="This command is used to provide stats of each files added,deleted and modified")
     parser.add_argument("--update", type = str, help="This command is used to provide stats of each files added,deleted and modified")
+    parser.add_argument("--verify_log", type=str, help="This command is used to verify the log entries to check if any log has been altered or not")
     arg = parser.parse_args()
 
     log_file_path = ""
@@ -42,9 +44,10 @@ if __name__ == "__main__":
                                 force = True,
                                 filemode="a",
                                 filename = f"{path.parent}/log_files/{path.stem}.log",
-                                format="{  Message: %(message)s \n Date & time: %(asctime)s \n Logging_level: %(levelname)s }\n",
+                                format="{  \n Message: %(message)s \n Date & time: %(asctime)s \n Logging_level: %(levelname)s \n}",
                             )
                     logging.info(f"Path: {path} was updated for monitoring as on with below details:")
+                    functions.log_hex(f"{path.parent}/log_files/{path.stem}.log",path)
                     
                 else:
                         print("Given path or its parent path already exists and its files are being monitored")
@@ -58,10 +61,11 @@ if __name__ == "__main__":
 
     #Below code help to provide summary of file which are being monitored for additions,deletions,content modifcations or permission changes in a file
     elif arg.check:
+
         path_details = []
         check_path = Path(arg.check)
         if check_path.exists():
-            functions.file_logger(check_path,baseline_file_details,False,path_details) 
+            functions.file_logger(check_path,baseline_file_details,False,path_details)
             
         else:
             print("Given Path seems to not exist. Kindly check the path of the file or directory properly")
@@ -73,7 +77,6 @@ if __name__ == "__main__":
         stat_path = Path(arg.stat)
         if stat_path.exists():
             functions.file_logger(stat_path,baseline_file_details,True,path_details)
-
         else:
             print("Given Path seems to not exist. Kindly check the path of the file or directory properly")
             print("Note: You can also run '--help' for assitance with commands")
@@ -93,14 +96,15 @@ if __name__ == "__main__":
                     if user_input == "Y":
                         dumper_loader_file.json_dump_op(baseline_file_details,update_path) #used to dump the json file
                         print(f"Your Given path : {update_path} is now updated and under monitoring......")
-                        logging.basicConfig(
+                        log_details = logging.basicConfig(
                             level = logging.INFO,
                             force = True,
                             filemode="a",
                             filename = f"{update_path.parent}/log_files/{update_path.stem}.log",
-                            format="{  Message: %(message)s \n Date & time: %(asctime)s \n Logging_level: %(levelname)s }\n",
+                            format="{  \n Message: %(message)s \n Date & time: %(asctime)s \n Logging_level: %(levelname)s \n}",
                             )
                         logging.warning(f"Path: {update_path} was initiated for monitoring as on with below details:")
+                        functions.log_hex(f"{update_path.parent}/log_files/{update_path.stem}.log",update_path)
                     elif user_input == "N": 
                         print(f"No changes done to your {update_path}")
                     else:
@@ -113,6 +117,14 @@ if __name__ == "__main__":
         else:
             print("Given Path seems to not exist. Kindly check the path of the file or directory properly")
             print("Note: You can also run '--help' for assitance with commands")
+
+    elif arg.verify_log:
+        path = Path(arg.verify_log)
+        if path.exists():
+            log_file_path = f"{path.parent}/log_files/{path.stem}.log" 
+            json_log_path = f"{path.parent}/log_files/log_json_files/{path.stem}_log.json" 
+            functions.log_verify(log_file_path, json_log_path)
+
 
     else:
         print("It seems like there were errors in aruguments or commands given\n Kindly check '--help' for help with commands and arguments")
