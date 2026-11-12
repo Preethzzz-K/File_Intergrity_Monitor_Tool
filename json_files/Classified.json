@@ -7,9 +7,9 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 818,
-        "stat_acess_time": 1794227403.0,
-        "stat_modified_time": 1794227403.0,
-        "stat_creation_time": 1794227403.0
+        "stat_acess_time": 1794310531.0,
+        "stat_modified_time": 1794310531.0,
+        "stat_creation_time": 1794310531.0
     },
     "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Agents/Agent1.txt": {
         "Parent Dir": "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Agents",
@@ -19,7 +19,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 733,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295179.0,
         "stat_modified_time": 1791180871.0,
         "stat_creation_time": 1791180871.0
     },
@@ -31,7 +31,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 353,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295179.0,
         "stat_modified_time": 1791180888.0,
         "stat_creation_time": 1791180888.0
     },
@@ -43,7 +43,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 981,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295179.0,
         "stat_modified_time": 1791181175.0,
         "stat_creation_time": 1791181175.0
     },
@@ -55,7 +55,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 1952,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295179.0,
         "stat_modified_time": 1791181194.0,
         "stat_creation_time": 1791181194.0
     },
@@ -67,7 +67,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 1460,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295179.0,
         "stat_modified_time": 1791181210.0,
         "stat_creation_time": 1791181210.0
     },
@@ -79,7 +79,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 1400,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295179.0,
         "stat_modified_time": 1792001359.0,
         "stat_creation_time": 1792001359.0
     },
@@ -91,7 +91,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 2114,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295179.0,
         "stat_modified_time": 1791181235.0,
         "stat_creation_time": 1791181235.0
     },
@@ -103,7 +103,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 1369,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295179.0,
         "stat_modified_time": 1791181248.0,
         "stat_creation_time": 1791181248.0
     },
@@ -115,7 +115,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 2136,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295179.0,
         "stat_modified_time": 1792675269.0,
         "stat_creation_time": 1792675269.0
     },
@@ -127,7 +127,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 57114,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295179.0,
         "stat_modified_time": 1791181397.0,
         "stat_creation_time": 1791181397.0
     },
@@ -139,7 +139,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 162386,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295179.0,
         "stat_modified_time": 1791182182.0,
         "stat_creation_time": 1791182182.0
     },
@@ -151,21 +151,9 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 6868,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791182145.0,
         "stat_creation_time": 1791182145.0
-    },
-    "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/demo2.txt": {
-        "Parent Dir": "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents",
-        "File Name": "demo2.txt",
-        "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "stat_mode": "-rwxrwxrwx",
-        "stat_uid": 1000,
-        "stat_gid": 1000,
-        "stat_size": 0,
-        "stat_acess_time": 1793796519.0,
-        "stat_modified_time": 1793796519.0,
-        "stat_creation_time": 1793796519.0
     },
     "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/Doc.txt": {
         "Parent Dir": "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents",
@@ -175,7 +163,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 1086,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295179.0,
         "stat_modified_time": 1791281805.0,
         "stat_creation_time": 1791281805.0
     },
@@ -187,7 +175,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 1248,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791182578.0,
         "stat_creation_time": 1791182578.0
     },
@@ -199,7 +187,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 1076,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791182580.0,
         "stat_creation_time": 1791182580.0
     },
@@ -211,7 +199,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 16072610,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791182197.0,
         "stat_creation_time": 1791182197.0
     },
@@ -223,9 +211,33 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 1892806,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791182151.0,
         "stat_creation_time": 1791182151.0
+    },
+    "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/new.txt": {
+        "Parent Dir": "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents",
+        "File Name": "new.txt",
+        "hash": "2b8f0ecf88750eaa4bd83c02a0fc2d8c97c70737561569f2c1165b16efeeb5d1",
+        "stat_mode": "-rwxrwxrwx",
+        "stat_uid": 1000,
+        "stat_gid": 1000,
+        "stat_size": 20,
+        "stat_acess_time": 1794308354.0,
+        "stat_modified_time": 1794308354.0,
+        "stat_creation_time": 1794308354.0
+    },
+    "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/rrr.txt": {
+        "Parent Dir": "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents",
+        "File Name": "rrr.txt",
+        "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stat_mode": "-rwxrwxrwx",
+        "stat_uid": 1000,
+        "stat_gid": 1000,
+        "stat_size": 0,
+        "stat_acess_time": 1794306497.0,
+        "stat_modified_time": 1794306497.0,
+        "stat_creation_time": 1794306497.0
     },
     "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/Unit 2 AIML.pptx": {
         "Parent Dir": "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents",
@@ -235,7 +247,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 932604,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791182162.0,
         "stat_creation_time": 1791182162.0
     },
@@ -247,21 +259,21 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 2242,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791182178.0,
         "stat_creation_time": 1791182178.0
     },
     "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Reports/r0.txt": {
         "Parent Dir": "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Reports",
         "File Name": "r0.txt",
-        "hash": "8df174662f305ad8e10d59de2efe9d05ae50a5be14bf2737f7800e245159d45e",
+        "hash": "a255593f75bd624e7c2f55701838ff43af84dc74853669f9dc639d51eb45706e",
         "stat_mode": "-rwxrwxrwx",
         "stat_uid": 1000,
         "stat_gid": 1000,
-        "stat_size": 48,
-        "stat_acess_time": 1793600381.0,
-        "stat_modified_time": 1791186469.0,
-        "stat_creation_time": 1791186469.0
+        "stat_size": 46,
+        "stat_acess_time": 1794306800.0,
+        "stat_modified_time": 1794306800.0,
+        "stat_creation_time": 1794306800.0
     },
     "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Reports/R1.txt": {
         "Parent Dir": "/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Reports",
@@ -271,7 +283,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 1169,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791182517.0,
         "stat_creation_time": 1791182517.0
     },
@@ -283,7 +295,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 2665,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791182776.0,
         "stat_creation_time": 1791182776.0
     },
@@ -295,7 +307,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 2236,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791182858.0,
         "stat_creation_time": 1791182858.0
     },
@@ -307,7 +319,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 4030,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791182892.0,
         "stat_creation_time": 1791182892.0
     },
@@ -319,7 +331,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 5063,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791182909.0,
         "stat_creation_time": 1791182909.0
     },
@@ -331,7 +343,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 4787,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791182927.0,
         "stat_creation_time": 1791182927.0
     },
@@ -343,7 +355,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 6165,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791182945.0,
         "stat_creation_time": 1791182945.0
     },
@@ -355,7 +367,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 5547,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791183006.0,
         "stat_creation_time": 1791183006.0
     },
@@ -367,7 +379,7 @@
         "stat_uid": 1000,
         "stat_gid": 1000,
         "stat_size": 4701,
-        "stat_acess_time": 1793600381.0,
+        "stat_acess_time": 1794295180.0,
         "stat_modified_time": 1791183003.0,
         "stat_creation_time": 1791183003.0
     }

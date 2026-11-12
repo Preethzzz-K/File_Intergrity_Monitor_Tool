@@ -14,12 +14,13 @@
 /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/249752061130545_merged.pdf
 /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/Black.pdf
 /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/demo.xlsx
-/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/demo2.txt
 /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/Doc.txt
 /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/doc2.txt
 /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/doc3.txt
 /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/Eng_print.pdf
 /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/Manual.pdf
+/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/new.txt
+/mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/rrr.txt
 /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/Unit 2 AIML.pptx
 /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/unnamed.gif
 /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Reports

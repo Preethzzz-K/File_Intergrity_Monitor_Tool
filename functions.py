@@ -6,6 +6,7 @@ import logging
 import json
 from pathlib import Path
 
+
 #function used to get details ot stats of the path given
 def file_details_hunt(hunt,base_dict,data_dict,op):
     print("\n")
@@ -43,10 +44,24 @@ def file_details_hunt(hunt,base_dict,data_dict,op):
                 print(f"Actual stat_mode: {data_dict[key]['stat_mode']}")
             print("\n")
             
+#for logging entry of the changes
+def log_entry(message, path, monitor_path, status):
+    logging.basicConfig(
+           level = logging.INFO,
+           force = True,
+           filemode="a",
+           filename = f"{path}/log_files/{monitor_path.stem}.log",
+           format="{  \n Message: %(message)s \n Date & time: %(asctime)s \n Logging_level: %(levelname)s \n}",
+       )
+    if status == "add":
+        logging.info(message)
+    else:
+        logging.warning(message)
+    log_hex(f"{path}/log_files/{monitor_path.stem}.log",monitor_path, path)
 
 # function that helps in hexing the log_details of the changes
-def log_hex(log_file_path,path):
-    json_file_path = f"{path.parent}/log_files/log_json_files/{path.stem}_log.json" 
+def log_hex(log_file_path,path, project_path):
+    json_file_path = f"{project_path}/log_files/log_json_files/{path.stem}_log.json" 
     log_list = ["genesis",]
     lines = ""
     with open(log_file_path, "r") as filehandler:
@@ -72,7 +87,7 @@ def log_hex(log_file_path,path):
         else:
             with open(json_file_path, "a") as filehandler:
                 json.dump([],filehandler,indent=2)
-            log_hex(log_file_path,path)
+            log_hex(log_file_path,path,project_path)
 
 # function used to verify the log details to check if any log has  abeen altered or not        
 def log_verify(log_file_path, log_json_path):
@@ -118,6 +133,7 @@ def log_verify(log_file_path, log_json_path):
         else:
             print("Seems like log entries details are less or more in dump file or actual file")
             print("This might be because there might be deletion of log_details from log-file")
+            no_changes = -1
 
       
     if no_changes > 0:          
@@ -127,23 +143,23 @@ def log_verify(log_file_path, log_json_path):
         print(f"Below Log Entry has been Altered:\n")
         for entry in altered_log:
             print(f"{entry}\n")
+    elif no_changes < 0:
+        return
     else:
         print("Log-verified")
         print("There was no Log which has been altered with...")
 
-    
 #function used log file details on CLI screen
-def file_logger(path,base_dict,stats,path_details):
-    log_file_path = f"{path.parent}/log_files/{path.stem}.log"
+def file_logger(path,base_dict,stats,path_details,project_path):
+    log_file_path = f"{project_path}/log_files/{path.stem}.log"
     logging.basicConfig(
         level= logging.INFO,
         force= True,
         filemode="a",
         filename = log_file_path,
         format="{  \n Message: %(message)s \n Date & time: %(asctime)s \n Logging_level: %(levelname)s \n}",        
-    )
-    
-                           
+    )                       
+   
     with open("paths.txt","r") as filehandler:
         file = filehandler.read()
 
@@ -154,55 +170,41 @@ def file_logger(path,base_dict,stats,path_details):
             for p in path_specifier:
                 path_details.append(p)
                 path_selector(p, base_dict,path_details) #function used to check for dir and files and select path and store
+                
             
             try:
-                parent_dir = path.parent
+                parent_dir = project_path
                 file_name = f"{parent_dir}/json_files/{path.stem}.json"
-                data = dumper_loader_file.json_load_op(file_name,path) #loads the data
+                data = dumper_loader_file.json_load_op(file_name,path,project_path) #loads the data
                 is_added = base_dict.keys() - data.keys() # to identify if any additional file has been added to our folder
                 is_deleted = data.keys() - base_dict.keys() #to identify if any  file has been deleted from our folder
                 is_modified = data.keys() & base_dict.keys() #to identify if any  file has been modified to our folder
-                
-                
+               
                 #parsing the set elements and passes to the function
                 add_count = 0
                 delete_count = 0
                 modified_count = 0
                 modified_list = []
-                # not_modified_list = []
                 not_modified_count = 0
                 permission_changed_count = 0
                 permission_changed_list = []
     
-    
                 if is_added != set():
                     for op in is_added: 
                         add_count = add_count+1
-                        with open(log_file_path,"r") as filehandler:
-                            lines = filehandler.read()
-                            if op not in lines:
-                                logging.info(f"Path: {path} was added with {op} file path. Below are the details:")
-                                log_hex(log_file_path,path)
                     if stats == True:
                         print("--------------------------------------------------------")
-                        print("--------------------------------------------------------")
+                        print(path)
                         print(f"Total Files Added: {add_count}")
                         print("Below are the Stats of the Added files")
                         file_details_hunt(is_added,base_dict,data,"add")
-
-    
                         
                 if is_deleted != set():
                     for op in is_deleted:
                         delete_count = delete_count+1
-                        with open(log_file_path,"r") as filehandler:
-                            lines = filehandler.read()
-                            if op not in lines:
-                                logging.warning(f"Path: {path} was deleted with {op} file path. Below are the details:")  
-                                log_hex(log_file_path,path)   
                     if stats == True:
                         print("--------------------------------------------------------")
-                        print("--------------------------------------------------------")
+                        print(path)
                         print(f"Total Files Deleted: {delete_count}")
                         print("Below are the Stats of the Deleted files")
                         file_details_hunt(is_deleted,base_dict,data,"delete")
@@ -212,31 +214,23 @@ def file_logger(path,base_dict,stats,path_details):
                         if base_dict[op]["stat_mode"] != data[op]["stat_mode"]:
                             permission_changed_count = permission_changed_count + 1
                             permission_changed_list.append(op)
-
-     
                         if base_dict[op]["hash"] != data[op]["hash"]:
                             modified_count = modified_count+1
                             modified_list.append(op)
-                            with open(log_file_path,"r") as filehandler:
-                                lines = filehandler.read()
-                                if op not in lines:
-                                    logging.warning(f"Path: {path} has {op} file path and has been modified. Below are the details:")
-                                    log_hex(log_file_path,path)
                             if permission_changed_count > 0:
                                 with open(log_file_path,"r") as filehandler:
                                     lines = filehandler.read()
                                     if f"{op} file path permission was changed" not in lines:
-                                        logging.warning(f"Path: {path} with {op} file path permission was changed. Below are the details:")
-                                        log_hex(log_file_path,path)
+                                        logging.warning(f"file_path: {op}\n Status: Permission Changed")
+                                        log_hex(log_file_path,path,project_path)
 
                         else:
                          not_modified_count = not_modified_count + 1
-                        #     not_modified_list.append(op)
                         
     
                     if stats  == True and permission_changed_count > 0:
                         print("--------------------------------------------------------")
-                        print("--------------------------------------------------------")
+                        print(path)
                         print(f"Total Files with changed Permission: {permission_changed_count}")
                         print("Below are the stats of Permission Changed Files")
                         file_details_hunt(permission_changed_list,base_dict,data,"permission") 
@@ -244,46 +238,40 @@ def file_logger(path,base_dict,stats,path_details):
     
                     if stats == True and modified_count > 0:
                         print("--------------------------------------------------------")
-                        print("--------------------------------------------------------")
+                        print(path)
                         print(f"Total Files Content Modified: {modified_count}")
                         print("Below are the stats of Content Modified Files")
                         file_details_hunt(modified_list,base_dict,data,"modify")
     
-                    
-                    # if stats == True and not_modified_count >= 0:
-                    #     print("--------------------------------------------------------")
-                    #     print("--------------------------------------------------------")
-                    #     print(f"Total Files Classified: {not_modified_count}")
-                    #     print("Below are the stats of Classified Files")
-                    #     file_details_hunt(not_modified_list,base_dict,data,"not_modify")
+               
                 
-                if stats == True and (add_count + delete_count + modified_count + permission_changed_count) == 0 :
-                    print("---------------------------------------------------------------------------------")  
-                    print("Please Note: There are no Additions, Deletions, Content Modifications or Peromission_changes done on the monitoring files")                         
-    
-                if stats == False:
-                    print("--------------------------------------------------------")
-                    print("--------------------------------------------------------")          
-                    print("Please find the below Details of your files being monitored: ")
-                    print(f"Path being Monitored: {path}")
-                    print(f"Total Files Being Monitored: {add_count + delete_count + modified_count + not_modified_count }")
-                    print(f"Files Added:{add_count}")
-                    print(f"Files Deleted:{delete_count}")
-                    print(f"File Content Modified:{modified_count}")
-                    # print(f"Files Classified: {not_modified_count}")
-                    print(f"File Permissions Changed: {permission_changed_count}")
+                    if stats == True and (add_count + delete_count + modified_count + permission_changed_count) == 0 :
+                        print("---------------------------------------------------------------------------------")  
+                        print("Please Note: There are no Additions, Deletions, Content Modifications or Peromission_changes done on the monitoring files")                         
+        
+                    if stats == False:
+                        print("--------------------------------------------------------")          
+                        print("Please find the below Details of your files being monitored: ")
+                        print(f"Path being Monitored: {path}")
+                        print(f"Total Files Being Monitored: {add_count + delete_count + modified_count + not_modified_count }")
+                        print(f"Files Added:{add_count}")
+                        print(f"Files Deleted:{delete_count}")
+                        print(f"File Content Modified:{modified_count}")
+                        # print(f"Files Classified: {not_modified_count}")
+                        print(f"File Permissions Changed: {permission_changed_count}")
+                        print("------------------------End-----------------------------------\n")
 
-                if (add_count+delete_count+modified_count+permission_changed_count) == 0:
-                    sys.exit(0)
-                else:
+                if (add_count+delete_count+modified_count+permission_changed_count) > 0:
                     sys.exit(1)
-                    
-            
+                else:
+                    sys.exit(0)
+   
 
             except FileNotFoundError:
                 print("Looks like the given path to file or directory is not been iniated for monitoring\n Kindly init the path for monitoring\n You can also check '--help' for any assitance")
 
-        
+                
+            
         else:
             print("Looks like the given path to file or directory is not been iniated for monitoring\n Kindly init the path for monitoring\n You can also check '--help' for any assitance")
     

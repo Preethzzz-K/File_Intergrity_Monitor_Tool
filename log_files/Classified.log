@@ -1,15 +1,126 @@
 {  
- Message: Path: /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified was updated for monitoring as on with below details: 
- Date & time: 2026-11-08 23:27:08,975 
+ Message: Path: /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified
+ Status: Monitoring Initiated 
+ Date & time: 2026-11-10 07:49:57,619 
  Logging_level: INFO 
 }
 {  
- Message: Path: /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified has /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Agents/Agent0.txt file path and has been modified. Below are the details: 
- Date & time: 2026-11-09 07:30:19,176 
+ Message: Path: /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified
+ Status: Monitoring Initiated 
+ Date & time: 2026-11-10 07:51:00,734 
+ Logging_level: INFO 
+}
+{  
+ Message: Path: /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified
+ Status: Monitoring Initiated 
+ Date & time: 2026-11-10 07:52:34,351 
+ Logging_level: INFO 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Agents/Agent0.txt
+Status: Modified 
+ Date & time: 2026-11-11 02:50:49,990 
  Logging_level: WARNING 
 }
 {  
- Message: Path: /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified was initiated for monitoring as on with below details: 
- Date & time: 2026-11-09 07:30:56,923 
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Agents/Agent2.txt
+Status: Modified 
+ Date & time: 2026-11-11 03:33:19,806 
+ Logging_level: WARNING 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Agents/Agent2.txt
+Status: Modified 
+ Date & time: 2026-11-11 03:35:41,054 
+ Logging_level: WARNING 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Agents/Agent2.txt
+Status: Modified 
+ Date & time: 2026-11-11 03:35:45,415 
+ Logging_level: WARNING 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Agents/Agent9.txt
+Status: Modified 
+ Date & time: 2026-11-11 03:48:30,083 
+ Logging_level: WARNING 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Agents/Agent0.txt
+Status: Modified 
+ Date & time: 2026-11-11 03:48:44,430 
+ Logging_level: WARNING 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/rrr.txt
+Status: Deleted 
+ Date & time: 2026-11-11 03:48:57,059 
+ Logging_level: WARNING 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Documents/news.txt
+Status: Added 
+ Date & time: 2026-11-11 03:49:08,646 
+ Logging_level: INFO 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/app.xt
+Status: Added 
+ Date & time: 2026-11-11 04:50:16,005 
+ Logging_level: INFO 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/app.xt
+Status: Deleted 
+ Date & time: 2026-11-11 04:51:07,616 
+ Logging_level: WARNING 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Agents/Agent1.txt
+Status: Modified 
+ Date & time: 2026-11-11 09:42:18,250 
+ Logging_level: WARNING 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Agents/Agent6.txt
+Status: Modified 
+ Date & time: 2026-11-11 09:44:15,928 
+ Logging_level: WARNING 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Agents/Agent5.txt
+Status: Modified 
+ Date & time: 2026-11-11 09:44:15,999 
+ Logging_level: WARNING 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/Agents/Agent5.txt
+Status: Modified 
+ Date & time: 2026-11-11 09:46:16,858 
+ Logging_level: WARNING 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/agent.txt.txt
+Status: Added 
+ Date & time: 2026-11-11 09:50:51,948 
+ Logging_level: INFO 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/New Text Document.txt
+Status: Added 
+ Date & time: 2026-11-11 09:57:01,937 
+ Logging_level: INFO 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/new.txt
+Status: Added 
+ Date & time: 2026-11-11 09:58:43,355 
+ Logging_level: INFO 
+}
+{  
+ Message: File_path /mnt/hgfs/Kali_HDD_Storage/My_Projects/project_file_monitor/Classified/new.txt
+Status: Deleted 
+ Date & time: 2026-11-11 09:59:00,960 
  Logging_level: WARNING 
 }
