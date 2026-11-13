@@ -69,7 +69,6 @@ if __name__ == "__main__":
     parser.add_argument("--update", type = str, help="This command is used to provide stats of each files added,deleted and modified")
     parser.add_argument("--verify_log", type=str, help="This command is used to verify the log entries to check if any log has been altered or not")
     parser.add_argument("--monitor" , type=str, help="This command is used to automate the process of monitoring files")
-    parser.add_argument("--cron_check" , type=str, help="This is an internal command. Please donot Run this command")
 
     arg = parser.parse_args()
 

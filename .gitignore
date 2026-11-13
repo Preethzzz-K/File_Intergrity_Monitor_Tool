@@ -1,0 +1,8 @@
+__pycache__/
+.venv/
+venv/
+key_files/
+sig_files/
+json_files/
+log_files/
+

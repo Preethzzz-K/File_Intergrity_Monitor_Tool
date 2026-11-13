@@ -14,7 +14,7 @@ def secret_key(project_path, path):
         key = secrets.token_bytes(32)
         with open(key_file, "wb") as fileHandler:
             fileHandler.write(key)
-        Path(key).chmod(0o600)
+        Path(key_file).chmod(0o600)
         return key
 
 def hmac_signature(key,file_name):
